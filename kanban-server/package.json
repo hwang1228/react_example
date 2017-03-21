@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"node server.js\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "author": "Jacek Spolnik",
+  "license": "MIT",
+  "dependencies": {
+    "bunyan": "^1.8.0",
+    "nedb": "^1.8.0",
+    "restify": "^4.0.4",
+    "typings": "^2.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "typescript": "^2.2.1"
+  }
+}

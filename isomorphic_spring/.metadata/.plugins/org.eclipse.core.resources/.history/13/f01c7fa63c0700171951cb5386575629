@@ -1,0 +1,20 @@
+package com.opensg.j2v8test;
+
+import java.io.IOException;
+
+import com.eclipsesource.v8.V8;
+import com.eclipsesource.v8.V8Array;
+
+public class Example {
+	public static void main(String[] args) throws IOException {
+		V8 v8 = V8.createV8Runtime();
+		Util util = new Util();
+		String js = util.getJSFileString("js/hello.js");
+		v8.executeVoidScript(js);
+		
+		V8Array parameters = new V8Array(v8).push(5);
+		
+		String html = v8.executeIntegerFunction("foo", parameters);
+		System.out.println(html);
+	}
+}

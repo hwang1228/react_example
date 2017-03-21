@@ -1,0 +1,25 @@
+package com.opensg.j2v8test;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+
+public class Util {
+	
+    private Reader read(String path) {
+
+    }
+    
+    public String getJSFileString(String path) {
+        InputStream in = getClass().getClassLoader().getResourceAsStream(path);
+        InputStreamReader reader = new InputStreamReader(in);
+        StringBuilder contentReceiver = new StringBuilder();
+        char[] buf = new char[1024];  
+
+        while (in.read(buf) > 0) {
+            contentReceiver.append(buf);
+        } 
+ 
+        return contentReceiver.toString();
+    }
+}

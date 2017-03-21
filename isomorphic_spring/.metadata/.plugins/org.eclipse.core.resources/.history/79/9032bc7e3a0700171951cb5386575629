@@ -1,0 +1,13 @@
+package com.opensg.j2v8test;
+
+import com.eclipsesource.v8.V8;
+
+public class Example {
+	public static void main(String[] args) {
+		V8 runtime = V8.createV8Runtime();
+		Util util = new Util();
+		String js = util.getJSFileString("js/hello.js");
+		
+		runtime.executeStringFunction("render", nu)
+	}
+}

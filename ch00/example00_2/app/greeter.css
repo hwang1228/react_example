@@ -1,0 +1,6 @@
+.root {
+    background-color:aqua;
+    padding: 10px;
+    border: solid 1px orange;
+    display: flex;
+}
